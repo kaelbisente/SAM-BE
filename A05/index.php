@@ -13,10 +13,9 @@ $islandQuery = "
         ic.image AS island_image,
         ip.image AS islandperso_image
     FROM islandsofpersonality ip
-    LEFT JOIN islandcontents ic ON ip.islandOfPersonalityID = ic.islandOfPersonalityID";
-
-
-
+    JOIN islandcontents ic ON ip.islandOfPersonalityID = ic.islandOfPersonalityID";
+    
+    
 $islandResult = executeQuery($islandQuery);
 
 $name = '';
@@ -24,9 +23,11 @@ $shortDescription = '';
 $longDescription = '';
 $islandContents = [];
 
+$titles = ['Laiya 2023', 'DevCon 2024', 'Paresan', 'Biking - Pandemic Era', 'Badminton', 'Basketball'];
+$titleIndex = 0; 
 
 while ($row = mysqli_fetch_assoc($islandResult)) {
-
+    
 
     $islandNames[] = $row['island_name'];
     if (empty($name)) {
@@ -35,6 +36,8 @@ while ($row = mysqli_fetch_assoc($islandResult)) {
         $longDescription = $row['long_desc'];
     }
 
+    $title = $titles[$titleIndex % count($titles)];
+
     $a = new Island(
         $row['island_name'],
         $row['short_desc'],
@@ -42,9 +45,11 @@ while ($row = mysqli_fetch_assoc($islandResult)) {
         $row['content'],
         $row['island_image'],
         $row['islandperso_image'],
+        $title
     );
 
     array_push($islandContents, $a);
+    $titleIndex++;
 }
 
 ?>
@@ -118,12 +123,6 @@ while ($row = mysqli_fetch_assoc($islandResult)) {
             <div class="col-lg-8 gray-bg">
                 <!-- Friendly Island -->
                 <div class="content white-bg">
-                    <h1 class="text-center"><?php echo $name; ?></h1>
-                    <div class="mb-4">
-                        <p class="content-text text-center"><?php echo $shortDescription; ?></p>
-                        <p class="content-text "><?php echo $longDescription; ?></p>
-                    </div>
-                    <h5 class="text-center text-muted">Laiya, 2023</h5>
                     <?php
                     foreach ($islandContents as $content) {
                         echo $content->generateCard();
@@ -133,24 +132,7 @@ while ($row = mysqli_fetch_assoc($islandResult)) {
                 <!-- end of friendly island -->
                 
                 <!-- Sports Island -->
-                <div class="content white-bg mt-5">
-                    <h1 class="text-center"><?php echo $name; ?></h1>
-                    <div class="mb-4">
-                        <p class="content-text text-center"><?php echo $shortDescription; ?></p>
-                        <p class="content-text "><?php echo $longDescription; ?></p>
-                    </div>
-                    <h5 class="text-center text-muted">Laiya, 2023</h5>
-                    <?php
-                    foreach ($islandContents as $content) {
-                        echo $content->generateCard();
-                    }
-                    ?>
-                    </div>
-                </div>
-
-                
-
-
+            </div>
                 <!-- side content -->
                 <div class="col-lg-4 gray-bg ">
                     <div class="sideContent w-100 ">
