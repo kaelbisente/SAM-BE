@@ -23,7 +23,7 @@ $shortDescription = '';
 $longDescription = '';
 $islandContents = [];
 
-$titles = ['Laiya 2023', 'DevCon 2024', 'Paresan', 'Biking - Pandemic Era', 'Badminton', 'Basketball'];
+$titles = ['Laiya 2023', 'DevCon 2024', 'Paresan', 'Biking - Pandemic Era', 'Badminton', 'Basketball', 'Valorant', 'Mobile Legends', 'Farlight'];
 $titleIndex = 0; 
 
 while ($row = mysqli_fetch_assoc($islandResult)) {
@@ -138,8 +138,7 @@ while ($row = mysqli_fetch_assoc($islandResult)) {
                     <div class="sideContent w-100 ">
                         <div class="profile">
                             <div class="card w-100" style="width: 18rem;">
-                                <img src="../A05/assets/profimage.jpg" class="card-img-top " alt="..."
-                                    style="height: 500px;">
+                                <img src="../A05/assets/profimage.jpg" class="card-img-top " alt="...">
                                 <div class="card-body">
                                     <p class="card-text">Just me, myself and I, exploring the universe of uknownment. I have
                                         a heart of love and a interest. I want to share my world with you.</p>

@@ -21,6 +21,7 @@ class Island
         $this->content = $content;
         $this->image = $image;
         $this->islandperso_image = $islandperso_image;
+        
         $this->title = $title;
     }
 
