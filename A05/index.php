@@ -14,8 +14,8 @@ $islandQuery = "
         ip.image AS islandperso_image
     FROM islandsofpersonality ip
     JOIN islandcontents ic ON ip.islandOfPersonalityID = ic.islandOfPersonalityID";
-    
-    
+
+
 $islandResult = executeQuery($islandQuery);
 
 $name = '';
@@ -23,11 +23,24 @@ $shortDescription = '';
 $longDescription = '';
 $islandContents = [];
 
-$titles = ['Laiya 2023', 'DevCon 2024', 'Paresan', 'Biking - Pandemic Era', 'Badminton', 'Basketball', 'Valorant', 'Mobile Legends', 'Farlight'];
-$titleIndex = 0; 
+$titles = [
+    'Laiya 2023',
+    'DevCon 2024',
+    'Paresan',
+    'Biking - Pandemic Era',
+    'Badminton',
+    'Basketball',
+    'Valorant',
+    'Mobile Legends',
+    'Farlight',
+    'Bypass Road Cafe',
+    'Pastry Project',
+    "Dwenas Cafe"
+];
+$titleIndex = 0;
 
 while ($row = mysqli_fetch_assoc($islandResult)) {
-    
+
 
     $islandNames[] = $row['island_name'];
     if (empty($name)) {
@@ -68,50 +81,34 @@ while ($row = mysqli_fetch_assoc($islandResult)) {
 </head>
 
 <body>
-    <!-- header -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
+    <!-- navbar -->
+
+
+    <section class="navbar-header">
+        <nav class="navbar navbar-expand-lg bg-light w-100 position-fixed" id="navHeader">
+            <div class="container p-0 m-0 p-md-0   mx-auto">
+                <a class="navbar-brand" href="#"><img src="../assets/logo_name.png" alt=""></a>
+                <button class="navbar-toggler me-2 me-md-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end w-100" id="navbarNav">
+                    <ul class="navbar-nav text-center">
+                        <li class="nav-item mx-3">
+                            <a class="nav-link active" aria-current="page" href="#">About</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-    <!-- end -->
+        </nav>
+    </section>
 
     <!-- Blog Text -->
-    <div class="container white-bg mt-4">
-        <div class="row">
+    <div class="container white-bg ">
+        <div class="row mt-5">
             <div class="col">
                 <h1 class="text-uppercase text-center mt-4">Vincent Bloglife</h1>
                 <h5 class="text-center fw-light mt-4">Welcome to the blog of Vincent's Personality</h5>
-            </div>
-        </div>
-    </div>
-    <!-- end -->
-
-    <!-- img con -->
-    <div class="container imgCon">
-        <div class="col">
-            <div class="row">
-                <img class="img-fluid mx-auto" src="../A05/assets/jett.jpg" alt="jet image">
             </div>
         </div>
     </div>
@@ -129,45 +126,62 @@ while ($row = mysqli_fetch_assoc($islandResult)) {
                     }
                     ?>
                 </div>
+                <div class="">kung nababasa mo man to kuya cj, pasensya ka na sa suntok ko, bad joke yon. hindi ko na uulitin. Sana okay na yang likod mo at sana di mo ako ibagsak hehe 
+                        
+                    </div>
                 <!-- end of friendly island -->
-                
+
                 <!-- Sports Island -->
             </div>
-                <!-- side content -->
-                <div class="col-lg-4 gray-bg ">
-                    <div class="sideContent w-100 ">
-                        <div class="profile">
-                            <div class="card w-100" style="width: 18rem;">
-                                <img src="../A05/assets/profimage.jpg" class="card-img-top " alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Just me, myself and I, exploring the universe of uknownment. I have
-                                        a heart of love and a interest. I want to share my world with you.</p>
-                                </div>
+            <!-- side content -->
+            <div class="col-lg-4 gray-bg ">
+                <div class="sideContent w-100 ">
+                    <div class="profile">
+                        <div class="card w-100" style="width: 18rem;">
+                            <img src="../A05/assets/profimage.jpg" class="card-img-top " alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Just me, myself and I, exploring the universe of uknownment. I have
+                                    a heart of love and a interest. I want to share my world with you.</p>
                             </div>
-                            <div class="card w-100 mt-4" style="border: none;">
-                                <div class="card-header text-white p-4 fw-bold">
-                                    Personality
-                                </div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">lorem <span class="text-muted"></span></li>
-                                    <li class="list-group-item">lorem <span class="text-muted"></span></li>
-                                    <li class="list-group-item">lorem <span class="text-muted"></span></li>
-                                    <li class="list-group-item">lorem <span class="text-muted"></span></li>
-                                </ul>
+                        </div>
+                        <div class="card w-100 mt-4" style="border: none;">
+                            <div class="card-header text-white p-4 fw-bold">
+                                Other Personalities
                             </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Determined <span class="text-muted"></span></li>
+                                <li class="list-group-item">Hardworking <span class="text-muted"></span></li>
+                                <li class="list-group-item">Flexible <span class="text-muted"></span></li>
+                                <li class="list-group-item">Adaptive <span class="text-muted"></span></li>
+                                <li class="list-group-item">Nagpapababy <span class="text-muted"></span></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- footer section -->
+    <section class="footer mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>&copy; 2021 Vincent Manalang. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
-        </script>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
+    </script>
+
 </body>
 
 </html>
